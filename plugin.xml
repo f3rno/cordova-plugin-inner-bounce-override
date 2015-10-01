@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-inner-bounce-override"
+    version="0.0.1">
+
+    <name>InnerBounceOverride</name>
+    <description>Cordova Inner Bounce Override Plugin</description>
+    <license>WTFPL</license>
+    <keywords>cordova</keywords>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/inner_bounce_override.js" name="innerbounceoverride">
+        <clobbers target="window.InnerBounceOverride" />
+    </js-module>
+
+    <platform name="ios">
+        <header-file src="src/ios/InnerBounceOverride.h" />
+        <source-file src="src/ios/InnerBounceOverride.m" />
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="InnerBounceOverride">
+                <param name="ios-package" value="InnerBounceOverride" />
+            </feature>
+        </config-file>
+    </platform>
+</plugin>
